@@ -12,17 +12,7 @@ export class LearnComponent implements OnInit {
   ngOnInit() {
   }
 
-  var_id = 'asdasd'
-  public dis = false
-
-  public msgClass = {
-    "text-success":false,
-    "text-dangrt": false,
-    "text-special": false
+  clicked(val: string) {
+    console.log(val);
   }
-
-  onClick() {
-    this.var_id = "Not aabed"
-  }
-
 }

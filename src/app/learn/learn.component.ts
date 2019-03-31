@@ -12,6 +12,8 @@ export class LearnComponent implements OnInit {
   ngOnInit() {
   }
 
+  public name = ""
+
   clicked(val: string) {
     console.log(val);
   }

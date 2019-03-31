@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'helloAng';
+
+  ex() {
+    console.log('ex() is called')
+  }
 }

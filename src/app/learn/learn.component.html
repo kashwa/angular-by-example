@@ -5,5 +5,23 @@
 <!-- <input #myInput type="text">
 <button (click)="clicked(myInput.value)">Click me</button> -->
 
-<input [(ngModel)]="name" type="text">
-{{ name }}
+<!-- <input [(ngModel)]="name" type="text">
+{{ name }} -->
+
+<!-- <h2 *ngIf="false; else elseBlock">
+  My name is <strong>Aabed</strong> here!
+</h2>
+
+<ng-template #elseBlock>
+  <h2>
+    My name is <strong>Hidden</strong>
+  </h2>
+</ng-template> -->
+
+<div *ngIf="true; then thenTemplate; else elseTemplate"> First one </div>
+<ng-template #thenTemplate>
+  then
+</ng-template>
+<ng-template #elseTemplate>
+  else
+</ng-template>

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'helloAng';
+  title = 'angularapp';
 
   ex() {
     console.log('ex() is called')

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/User';
 
 // this is part of TS and it is used to add extra info to our class/component.
@@ -9,7 +9,7 @@ import { User } from '../../models/User';
   styleUrls: ['./user.component.css']
 })
 
-export class UserComponent {
+export class UserComponent implements OnInit {
 
   // properties
   user: User;
@@ -17,6 +17,9 @@ export class UserComponent {
   // Methods
   constructor() {
 
+  }
+
+  ngOnInit() {
     this.user = {
       firstname: 'aabed',
       lastname: 'kashwa',
@@ -27,6 +30,5 @@ export class UserComponent {
         city: 'egy'
       }
     }
-
   }
 }

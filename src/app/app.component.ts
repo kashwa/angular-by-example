@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'angularapp';
 
   ex() {
-    console.log('ex() is called')
+    console.log('Yup, Who called me?')
   }
 }

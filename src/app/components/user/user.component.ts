@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../../models/User';
 
 // this is part of TS and it is used to add extra info to our class/component.
 
@@ -9,17 +10,23 @@ import { Component } from '@angular/core';
 })
 
 export class UserComponent {
-  // properties
-  firstname = 'aabed';
-  lastname = 'kashwa';
-  address = {
-    street: "last street",
-    city: "Tahoma city",
-    apartment: 12
-  }
 
-  // methods
+  // properties
+  user: User;
+
+  // Methods
   constructor() {
-    console.log(`Hello ${this.firstname} ${this.lastname}`);
+
+    this.user = {
+      firstname: 'aabed',
+      lastname: 'kashwa',
+      age: 22,
+      address: {
+        street: 'bragy',
+        state: 'menofia',
+        city: 'egy'
+      }
+    }
+
   }
 }

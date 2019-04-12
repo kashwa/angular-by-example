@@ -1,14 +1,23 @@
 <h2>Users:</h2>
-<ul *ngIf="users?.length > 0; else noUsers">
-  <li *ngFor="let user of users">
-    <h3>
-      {{ user.firstname +' '+ user.lastname }}
-    </h3>
-    <ul *ngIf="showExtended">
-      <li>Age: {{ user.age }}</li>
-      <li>Address: {{ user.address.city +' '+ user.address.street }}</li>
-    </ul>
 
+<button [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add new user</button>
+
+<ul class="list-unstyled" *ngIf="users?.length > 0; else noUsers">
+  <li class="card card-body mb-2" *ngFor="let user of users">
+    <div class="row">
+      <div class="col-sm-4">
+        <img *ngIf="user.image" class="img-fluid" [src]="user.image" alt="">
+      </div>
+      <div class="col-sm-8">
+        <h3>
+          {{ user.firstname +' '+ user.lastname }}
+        </h3>
+        <ul class="list-group" *ngIf="showExtended && user.age && user.address">
+          <li class="list-group-item">Age: {{ user.age }}</li>
+          <li class="list-group-item">Address: {{ user.address.city +' '+ user.address.street }}</li>
+        </ul>
+      </div>
+    </div>
   </li>
 </ul>
 

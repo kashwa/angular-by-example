@@ -2,12 +2,12 @@ export interface User {
 
   firstname: string,
   lastname: string,
-  age: number,
+  age?: number,
 
   address: {
     street: string,
-    city: string,
-    state: string
+    city?: string,
+    state?: string
   }
 
 }

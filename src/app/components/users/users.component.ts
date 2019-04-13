@@ -7,15 +7,19 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  users: User[];
+  users: User[]; // array of all users
+  user: User = {
+    firstname: '',
+    lastname: '',
+    email: '',
+  }
   image = null;
-  showExtended: boolean = false;
+  showExtended: boolean = true;
   loaded: boolean = false;
-  enableAdd: boolean = true;
-  currentClasses = {};
-  currentStyles = {};
+  enableAdd: boolean = false;
+  showUserForm: boolean = false;
 
-  constructor() { this.image = 'http://lorempixel.com/600/600/people/3'; }
+  constructor() { }
 
   ngOnInit() {
 
@@ -23,83 +27,43 @@ export class UsersComponent implements OnInit {
       {
         firstname: 'aabed',
         lastname: 'kashwa',
-        age: 22,
-        address: {
-          street: 'bragy',
-          state: 'menofia',
-          city: 'cairo'
-        },
-        image: this.image,
+        email: 'aabed@app.com',
         isActive: true,
-        balance: 100,
-        registered: new Date('01/02/2019 00:30:00')
+        registered: new Date('01/02/2019 00:30:00'),
+        hide: true,
       },
       {
         firstname: 'alaa',
         lastname: 'lola',
-        age: 18,
-        address: {
-          street: 'bragy',
-          state: 'menofia',
-          city: 'usa'
-        },
-        image: this.image,
-        balance: 200,
-        registered: new Date('15/07/2018 00:30:00')
+        email: 'alaa@app.com',
+        registered: new Date('05/07/2018 00:30:00'),
+        hide: true,
       },
       {
         firstname: 'zahraa',
         lastname: 'kashwa',
-        age: 20,
-        address: {
-          street: 'bragy',
-          state: 'menofia',
-          city: 'paris'
-        },
-        image: this.image,
+        email: 'zahraa@app.com',
         isActive: true,
-        balance: 300,
-        registered: new Date('01/02/2019 10:30:10')
+        registered: new Date('02/05/2019 10:30:10'),
+        hide: true,
       }
     ];
 
     this.loaded = true;
-
-
-    this.showExtended = true;
-
-    // this.addUser({
-    //   firstname: 'David',
-    //   lastname: 'goliath',
-    //   age: 40,
-    //   address: {
-    //     street: 'manhatten',
-    //     state: 'NY',
-    //     city: 'usa'
-    //   },
-    //   image: this.image
-    // })
-
-    this.setCurrentClasses();
-    this.setCurrentStyles();
   }
 
-  addUser(user: User) {
-    this.users.push(user)
-  }
+  // addUser() {
+  //   this.user.isActive = true;
+  //   this.user.registered = new Date();
+  //   this.users.unshift(this.user);
+  //   this.user = {
+  //     firstname: '',
+  //     lastname: '',
+  //     email: '',
+  //   }
+  // }
 
-  setCurrentClasses() {
-    this.currentClasses = {
-      'btn-success': this.enableAdd, // class success will be added if (this.enabled = true)
-      'big-text': this.showExtended
-    }
-  }
+  onSubmit() {
 
-  setCurrentStyles() {
-    this.currentStyles = {
-      'padding-top': this.showExtended ? '0' : '40px',
-      'font-size': this.showExtended ? '' : '40px'
-    }
   }
-
 }

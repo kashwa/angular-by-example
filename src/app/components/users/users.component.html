@@ -5,8 +5,9 @@
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div class="form-group">
       <label>First Name</label>
-      <input type="text" [ngClass]="{'is-invalid': userFirstname.errors && userFirstname.touched}" name="firstname"
-        [(ngModel)]="user.firstname" class="form-control" #userFirstname="ngModel" required minlength="2">
+      <input autocomplete='off' type="text" [ngClass]="{'is-invalid': userFirstname.errors && userFirstname.touched}"
+        name="firstname" [(ngModel)]="user.firstname" class="form-control" #userFirstname="ngModel" required
+        minlength="2">
 
       <div [hidden]="!userFirstname.errors?.required" class="invalid-feedback">
         firstname is required.
@@ -19,7 +20,7 @@
 
     <div class="form-group">
       <label>Last Name</label>
-      <input type="text" [(ngModel)]="user.lastname" #userLastname="ngModel"
+      <input type="text" autocomplete='off' [(ngModel)]="user.lastname" #userLastname="ngModel"
         [ngClass]="{'is-invalid':userLastname.errors && userLastname.touched}" class="form-control" name="lastName"
         required minlength="2">
 
@@ -34,7 +35,7 @@
 
     <div class="form-group">
       <label>Email Address</label>
-      <input type="email" #userEmail="ngModel" [(ngModel)]="user.email"
+      <input autocomplete='off' type="email" #userEmail="ngModel" [(ngModel)]="user.email"
         [ngClass]="{'is-invalid': userEmail.errors && userEmail.touched}" class="form-control" name="email" required
         pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
 

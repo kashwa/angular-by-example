@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   showExtended: boolean = false;
   loaded: boolean = false;
   enableAdd: boolean = true;
+  currentClasses = {};
 
   constructor() { this.image = 'http://lorempixel.com/600/600/people/3'; }
 
@@ -27,7 +28,8 @@ export class UsersComponent implements OnInit {
           state: 'menofia',
           city: 'cairo'
         },
-        image: this.image
+        image: this.image,
+        isActive: true
       },
       {
         firstname: 'alaa',
@@ -49,7 +51,8 @@ export class UsersComponent implements OnInit {
           state: 'menofia',
           city: 'paris'
         },
-        image: this.image
+        image: this.image,
+        isActive: true
       }
     ];
 
@@ -69,10 +72,19 @@ export class UsersComponent implements OnInit {
     //   },
     //   image: this.image
     // })
+
+    this.setCurrentClasses();
   }
 
   addUser(user: User) {
     this.users.push(user)
+  }
+
+  setCurrentClasses() {
+    this.currentClasses = {
+      'btn-success': this.enableAdd, // class success will be added if (this.enabled = true)
+      'big-text': this.showExtended
+    }
   }
 
 }

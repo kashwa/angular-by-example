@@ -24,4 +24,11 @@ export class PostService {
   savePost(postData: Post): Observable<Post> {
     return this.http.post<Post>(this.postsUrl, postData, httpOptions)
   }
+
+  // Request PUT.
+  updatePost(postData: Post): Observable<Post> {
+    const url = `${this.postsUrl}/${postData.id}`;
+
+    return this.http.put<Post>(url, postData, httpOptions)
+  }
 }

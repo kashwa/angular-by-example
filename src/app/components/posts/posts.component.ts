@@ -33,4 +33,19 @@ export class PostsComponent implements OnInit {
     this.isEdit = true;
   }
 
+  onUpdatedPost(post: Post) {
+    this.posts.forEach((cur, index) => {
+      if (post.id === cur.id) { // post comming from event emitter == the current post ?
+        this.posts.splice(index, 1)
+        this.posts.unshift(post) // moves the post we update to the top
+        this.isEdit = false
+        this.currentPost = {  //* reset the values of the form to null.
+          id: 0,
+          title: '',
+          body: '',
+        }
+      }
+    });
+  }
+
 }

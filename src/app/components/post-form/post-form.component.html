@@ -10,7 +10,11 @@
       <input #body [(ngModel)]="currentPost.body" type="text" autocomplete="off" class="form-control" name="body">
     </div>
     <input type="hidden" name="id" [(ngModel)]="currentPost.id">
+
+    <!-- if not EDIT then ADD -->
     <button *ngIf="!isEdit" (click)="addPost(title.value, body.value)" class="btn btn-dark btn-block">Add Post</button>
+
+    <!-- if EDIT then UPDATE -->
     <button *ngIf="isEdit" (click)="updatePost()" class="btn btn-warning btn-block">Update
       Post</button>
   </form>

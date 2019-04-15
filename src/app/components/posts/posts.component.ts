@@ -48,4 +48,16 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  removePost(post: Post) {
+    if (confirm('Delete ??')) {
+      this.PostService.removePost(post.id).subscribe(() => {
+        this.posts.forEach((cur, index) => {
+          if (post.id === cur.id) { // post comming from event emitter == the current post ?
+            this.posts.splice(index, 1)
+          }
+        });
+      })
+    }
+  }
+
 }

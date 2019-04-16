@@ -13,6 +13,8 @@ import { PostsComponent } from './components/posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostFormComponent } from './components/post-form/post-form.component';
 import { HomeComponent } from './components/home/home.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomeComponent } from './components/home/home.component';
     NavbarComponent,
     PostsComponent,
     PostFormComponent,
-    HomeComponent
+    HomeComponent,
+    PostDetailsComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
